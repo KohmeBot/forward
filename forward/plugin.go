@@ -32,7 +32,7 @@ func (p *PluginForward) Init(engine *zero.Engine, env plugin.Env) error {
 }
 
 func (p *PluginForward) Name() string {
-	return "传话"
+	return "forward"
 }
 
 func (p *PluginForward) Description() string {

@@ -12,7 +12,7 @@ import (
 
 func (p *PluginForward) SetOnStart(engine *zero.Engine) {
 
-	engine.OnCommandGroup([]string{"forward", "fw", "f"}, zero.OnlyPrivate, p.env.SuperUser().Rule()).
+	engine.OnCommandGroup([]string{"forward", "fw", "f"}, zero.OnlyPrivate, p.env.SuperUser().Rule()).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
 			sender := ctx.Event.Sender.ID
 			if p.tmp.Has(sender) {

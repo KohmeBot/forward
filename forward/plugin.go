@@ -44,7 +44,7 @@ func (p *PluginForward) Commands() fmt.Stringer {
 }
 
 func (p *PluginForward) Version() uint64 {
-	return uint64(version.NewVersion(0, 0, 2))
+	return uint64(version.NewVersion(0, 0, 3))
 }
 
 func (p *PluginForward) OnBoot() {

@@ -74,8 +74,8 @@ func convChain(msgs message.Message) message.Message {
 	return message.Message(cMsg)
 }
 
-func splitAtAllToMsg(strs []string) []message.MessageSegment {
-	var msgs []message.MessageSegment
+func splitAtAllToMsg(strs []string) []message.Segment {
+	var msgs []message.Segment
 	if len(strs) == 1 {
 		msgs = append(msgs, message.Text(strs[0]))
 		return msgs

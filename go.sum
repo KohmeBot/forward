@@ -13,6 +13,7 @@ github.com/kohmebot/pkg v1.0.1/go.mod h1:ln2tcr0LXDri5Si8bcLGc1Ek0sDJuy4M7qjOGO0
 github.com/kohmebot/pkg v1.0.2/go.mod h1:lBzLMdnCgnJjiEzgBRn2brSDLju0V4gvjx4AFVIJii4=
 github.com/kohmebot/plugin v1.2.5 h1:pBIGipMT8c1ivYdvGWoG1mMVXnoPFw40VkOGKANeya0=
 github.com/kohmebot/plugin v1.2.5/go.mod h1:MtJnzIjJEKM5zYdDQlbxNUaCIUMv7RRhfGcfaQhYd/Q=
+github.com/kohmebot/plugin/v2 v2.0.1/go.mod h1:clrLaDbymWohiWuZUGZypPvFm5w4qXmPPvX1aGPGU98=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/sirupsen/logrus v1.9.3 h1:dueUQJ1C2q9oE3F7wvmSGAaVtTmUizReu6fjN8uqzbQ=

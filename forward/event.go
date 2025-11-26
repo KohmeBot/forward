@@ -3,6 +3,7 @@ package forward
 import (
 	"fmt"
 	"github.com/kohmebot/pkg/chain"
+	"github.com/kohmebot/plugin/v2"
 	zero "github.com/wdvxdr1123/ZeroBot"
 	"github.com/wdvxdr1123/ZeroBot/message"
 	"regexp"
@@ -10,7 +11,7 @@ import (
 	"strings"
 )
 
-func (p *PluginForward) SetOnStart(engine *zero.Engine) {
+func (p *PluginForward) SetOnStart(engine plugin.Engine) {
 
 	engine.OnCommandGroup([]string{"forward", "fw", "f"}, zero.OnlyPrivate, p.env.SuperUser().Rule()).SetBlock(true).
 		Handle(func(ctx *zero.Ctx) {
@@ -22,7 +23,7 @@ func (p *PluginForward) SetOnStart(engine *zero.Engine) {
 			p.tmp.Start(sender, ctx)
 			var msg chain.MessageChain
 			var groups []string
-			for group := range p.env.Groups().RangeGroup {
+			for group := range p.env.Groups().RangeGroup() {
 				groups = append(groups, strconv.FormatInt(group, 10))
 			}
 
@@ -46,7 +47,7 @@ func (p *PluginForward) SetOnStart(engine *zero.Engine) {
 		})
 }
 
-func (p *PluginForward) SetOnMsg(engine *zero.Engine) {
+func (p *PluginForward) SetOnMsg(engine plugin.Engine) {
 	engine.OnMessage(zero.OnlyPrivate, p.env.SuperUser().Rule()).Handle(func(ctx *zero.Ctx) {
 		sender := ctx.Event.Sender.ID
 		if !p.tmp.Has(sender) {
@@ -54,7 +55,7 @@ func (p *PluginForward) SetOnMsg(engine *zero.Engine) {
 		}
 		p.tmp.Refresh(sender)
 		conv := convChain(ctx.Event.Message)
-		for group := range p.env.Groups().RangeGroup {
+		for group := range p.env.Groups().RangeGroup() {
 			ctx.SendGroupMessage(group, conv)
 		}
 		ctx.Send(message.Text("已传话！"))
